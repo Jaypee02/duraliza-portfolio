@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - James Paul Duraliza</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <div class="logo-icon"></div>
+            <span>PORTFOLIO</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#" id="navContactBtn">Contacts</a></li>
+                <li><a href="resume.html">About Me</a></li>
+            </ul>
+        </nav>
+        <!-- <a href="#" class="cta-header">Just a Button</a> -->
+    </header>
+
+    <section class="hero-section">
+        <div class="hero-content">
+            <span class="highlight-text">HELLO EVERYONE!</span>
+            <h1>I’m <br> James Paul Duraliza </h1>
+            <p>Currently a third year student of Bachelor of Science in Information Technology at Asia Technological of Science and Arts.</p>
+            
+            <div class="hero-buttons">
+                <a href="resume.html" class="btn btn-primary">About Me</a>
+                <a href="#" id="contactBtn" class="btn btn-secondary">Contact Me</a>
+            </div>
+        </div>
+
+        <div class="hero-image-container">
+            <div class="circle-decor"></div>
+            <img src="jpicture.png" alt="James Paul Duraliza">
+        </div>
+
+        <div class="wave-bg"></div>
+    </section>
+
+    <section class="info-section">
+        <div class="info-block">
+            <h3>"The future belongs to those who believe in the beauty of their dreams."</h3>
+            <p class="author">Eleanor Roosevelt</p>
+        </div>
+    </section>
+
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Let's Connect</h2>
+            <div class="social-links">
+                
+                <a href="https://www.facebook.com/paul.duraliza" target="_blank" class="social-item fb">
+                    <img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook">
+                    <span>Facebook</span>
+                </a>
+
+                <a href="mailto:1-230268@asiatech.edu.ph" class="social-item gmail">
+                    <img src="https://cdn-icons-png.flaticon.com/512/5968/5968534.png" alt="Gmail">
+                    <span>Email Me</span>
+                </a>
+
+                <a href="https://www.linkedin.com/in/james-paul-duraliza-89b2893a9/" target="_blank" class="social-item linkedin">
+                    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
+                    <span>LinkedIn</span>
+                </a>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 1. Get the elements
+        const modal = document.getElementById("contactModal");
+        const contactBtn = document.getElementById("contactBtn");       // The hero button
+        const navContactBtn = document.getElementById("navContactBtn"); // The nav bar link
+        const closeBtn = document.querySelector(".close-btn");
+
+        // 2. Create a reusable function to open the modal
+        function openModal(event) {
+            event.preventDefault(); // Stops the page from jumping
+            modal.style.display = "block";
+        }
+
+        // 3. Attach the open function to BOTH buttons
+        // We use "if" statements just in case one of the buttons is missing on another page
+        if (contactBtn) {
+            contactBtn.addEventListener("click", openModal);
+        }
+        if (navContactBtn) {
+            navContactBtn.addEventListener("click", openModal);
+        }
+
+        // 4. Close the modal when the "X" is clicked
+        closeBtn.addEventListener("click", function() {
+            modal.style.display = "none";
+        });
+
+        // 5. Close the modal if the user clicks anywhere outside of the white box
+        window.addEventListener("click", function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        });
+    </script>
+</body>
+</html>
